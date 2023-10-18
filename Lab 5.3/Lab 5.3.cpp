@@ -21,13 +21,6 @@ int main()
 	}
 	return 0;
 }
-int f(int n)
-{
-	if (n > 0)
-		return n * f(n - 1);
-	else
-		return 1;
-}
 double j(const double x)
 {
 	if (abs(x) >= 1)
@@ -41,7 +34,7 @@ double j(const double x)
 		do
 		{
 			i++;
-			double g = pow(x, 2 * i - 1) / f(2 * i + 1);
+			double g = x * x / (((3 * i + 2) - 2) * ((3 * i + 2) - 1) * 3 * i);
 			a *= g;
 			S += a;
 		} while (i < 5);
