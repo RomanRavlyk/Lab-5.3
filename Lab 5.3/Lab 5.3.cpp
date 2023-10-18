@@ -1,30 +1,30 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-double j(const double x);
-int f(int n);
+double j(double x);
 
 int main()
 {
-	double gp, gk, o;
+	double kp, kk, o;
 	int n;
-	cout << "gp = "; cin >> gp;
-	cout << "gk = "; cin >> gk;
+	cout << "gp = "; cin >> kp;
+	cout << "gk = "; cin >> kk;
 	cout << "n = "; cin >> n;
-	double dg = (gk - gp) / n;
-	double k = gp;
-	while (k <= gk)
+	double dk = (kk - kp) / n;
+	double k = kp;
+	while (k <= kk)
 	{
 		o = j(1 + k + j(k)) + pow(j(1 + pow(k, 2)), 2);
 		cout << k << ")" << o << endl;
-		k += dg;
+		k += dk;
 	}
 	return 0;
 }
+
 double j(const double x)
 {
 	if (abs(x) >= 1)
-		return (cos(x) + exp(abs(x))) / ((cos(x)*cos(x)) + 1);
+		return (cos(x) + exp(abs(x))) / ((cos(x) * cos(x)) + 1);
 	else
 	{
 		double S = 0;
@@ -34,10 +34,10 @@ double j(const double x)
 		do
 		{
 			i++;
-			double g = x * x / (((3 * i + 2) - 2) * ((3 * i + 2) - 1) * 3 * i);
+			double g = x / ((2 * i + 1) * ((2 * i + 1) - 1));
 			a *= g;
 			S += a;
-		} while (i < 5);
+		} while (i <= 5);
 		return S;
 	}
 }
