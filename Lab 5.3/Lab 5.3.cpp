@@ -45,12 +45,12 @@ double j(const double x)
 	{
 		double S = 0;
 		int i = 0;
-		double a = 1;
+		double a = x;
 		S = a;
 		do
 		{
 			i++;
-			double g = x / ((2 * i + 1) * ((2 * i + 1) - 1));
+			double g = x * x/ (2 * i) * (2 * i); 
 			a *= g;
 			S += a;
 		} while (i <= 5);
