@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 double j(double x);
 
@@ -10,13 +11,28 @@ int main()
 	cout << "gp = "; cin >> kp;
 	cout << "gk = "; cin >> kk;
 	cout << "n = "; cin >> n;
+	
+	cout << fixed;
+	cout << "-------------------------------------------------" << endl;
+	cout << "|" << setw(7) << "qp" << " |"
+		<< setw(10) << "qk" << " |"
+		<< setw(10) << "z" << " |"
+		<< setw(10) << "q" << " |"
+		<< endl;
+	cout << "-------------------------------------------------" << endl;
+
 	double dk = (kk - kp) / n;
 	double k = kp;
 	while (k <= kk)
 	{
 		o = j(1 + k + j(k)) + pow(j(1 + pow(k, 2)), 2);
-		cout << k << ")" << o << endl;
+		cout << "|" << setw(7) << setprecision(2) << kp << " |"
+			<< setw(10) << setprecision(5) << kk << " |"
+			<< setw(10) << o << " |"
+			<< setw(10) << k << " |"
+			<< endl;
 		k += dk;
+
 	}
 	return 0;
 }
